@@ -1,15 +1,14 @@
-import logo from './logo.svg';
 import './App.css';
-import NavBar from './components/NavBar/NavBar';
+import NavBar from './components/NavBar/NaviBar';
 
 function App() {
   return (
     <div className="App">
        <NavBar></NavBar>
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+        <h1>ECOTOMITO | PAÑALES DE TELA</h1>
         <p>
-          Jorge Osses
+          <small>by</small> Jorge Osses
         </p>
       </header>
     </div>
