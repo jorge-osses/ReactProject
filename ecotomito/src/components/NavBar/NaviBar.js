@@ -2,7 +2,7 @@ import Navbar from 'react-bootstrap/Navbar'
 import Nav from 'react-bootstrap/Nav'
 import NavDropdown from 'react-bootstrap/NavDropdown'
 import Container from 'react-bootstrap/Container'
-import LogoProduct from '../../assets/img/logo.png'
+import LogoProduct from '../../assets/img/logo.ico'
 import CartWidget from '../CartWidget/CartWidget'
 
 const NaviBar = () => {

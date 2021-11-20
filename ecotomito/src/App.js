@@ -1,4 +1,5 @@
 import './App.css';
+import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 import NavBar from './components/NavBar/NaviBar';
 
 function App() {
@@ -6,10 +7,7 @@ function App() {
     <div className="App">
        <NavBar></NavBar>
       <header className="App-header">
-        <h1>ECOTOMITO | PAÑALES DE TELA</h1>
-        <p>
-          <small>by</small> Jorge Osses
-        </p>
+        <ItemListContainer text="¡Bienvenidos a Ecotomito!" />
       </header>
     </div>
   );
