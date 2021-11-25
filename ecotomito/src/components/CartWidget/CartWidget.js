@@ -1,15 +1,17 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faShoppingCart} from '@fortawesome/free-solid-svg-icons';
 
    const CartWidget = (number) => (
-        <div className="ms-auto" style={{display:'flex', alignItems:'center', justifyContent:'center'}}>
+        <button className="ms-auto" style={{display:'flex', alignItems:'center', justifyContent:'center'}}>
             <FontAwesomeIcon icon={faShoppingCart} style={{
-                color:'yellow',
+                color:'black',
                 fontSize:'1.5em',
                 cursor:'pointer',
+                padding:'2'
             }}/>
-            <p style={{margin:'auto', marginLeft:'10px'}}>{1}</p>
-        </div>
+            <p style={{margin:'auto', marginLeft:'10px', padding:'10'}}>{1}</p>
+        </button>
+        
     )   
 
 
