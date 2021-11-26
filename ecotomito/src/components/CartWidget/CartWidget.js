@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faShoppingCart} from '@fortawesome/free-solid-svg-icons';
 
-   const CartWidget = (number) => (
+   const CartWidget = ({number}) => (
         <button className="ms-auto" style={{display:'flex', alignItems:'center', justifyContent:'center'}}>
             <FontAwesomeIcon icon={faShoppingCart} style={{
                 color:'black',
@@ -9,7 +9,7 @@ import {faShoppingCart} from '@fortawesome/free-solid-svg-icons';
                 cursor:'pointer',
                 padding:'2'
             }}/>
-            <p style={{margin:'auto', marginLeft:'10px', padding:'10'}}>{1}</p>
+            <p style={{margin:'auto', marginLeft:'10px', padding:'10'}}>{number}</p>
         </button>
         
     )   

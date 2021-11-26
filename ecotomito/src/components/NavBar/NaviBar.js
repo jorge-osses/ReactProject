@@ -32,7 +32,7 @@ const NaviBar = () => {
                 </Nav>
                 </Navbar.Collapse>
 
-            <CartWidget />
+            <CartWidget number={1} />
             </Container>
         </Navbar>
     )

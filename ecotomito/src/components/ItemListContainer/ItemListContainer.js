@@ -13,7 +13,7 @@ const ItemListContainer = ({text}) => (
                 </div>
             </Col>
         </Row>
-        <ItemCount/>
+        <ItemCount getInitial={1} getStock={15} onAdd={'Se agrega el producto seleccionado la cantidad de:'} />
     </Container>
 )
 export default ItemListContainer

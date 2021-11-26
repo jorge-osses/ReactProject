@@ -3,9 +3,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMinus, faPlus } from '@fortawesome/free-solid-svg-icons';
 
 
-const ItemCount = () => {
-  const [count, setCount] = useState(1);
-  const stock = 15;
+const ItemCount = ({getInitial, getStock, onAdd}) => {
+  const [count, setCount] = useState(getInitial);
+  const [stock] = useState(getStock);
+  const [message] = useState(onAdd);
 
   const increment = () => {
     if (count >= 1 && count < stock){
@@ -17,8 +18,8 @@ const ItemCount = () => {
       setCount(count - 1);
     }
   }
-  const onAdd = () => {
-    console.log(count)
+  const msg = () => {
+    console.log(`${message} ${count}`)
   }
   return (
     <div className="container center">
@@ -28,7 +29,7 @@ const ItemCount = () => {
         <div>{count}</div>
         <button onClick={increment}><FontAwesomeIcon icon={faPlus} /></button>
       </div>
-      <button onClick={onAdd}>Agregar al carrito</button>
+      <button onClick={msg}>Agregar al carrito</button>
     </div>
   )
 }
