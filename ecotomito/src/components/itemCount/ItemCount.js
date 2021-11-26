@@ -6,7 +6,14 @@ import './itemCount.css';
 const ItemCount = ({getInitial, getStock, onAdd}) => {
   const [count, setCount] = useState(getInitial);
   const [stock] = useState(getStock);
-
+  const validate = () => {
+    if (stock>0) {
+      onAdd(count)
+    }else {
+      return
+    }
+  }
+  
   const increment = () => {
     if (count >= 1 && count < stock){
       setCount(count + 1);
@@ -26,7 +33,7 @@ const ItemCount = ({getInitial, getStock, onAdd}) => {
         <div>{count}</div>
         <button onClick={increment}><FontAwesomeIcon icon={faPlus} /></button>
       </div>
-      <button className="addCartButton" onClick={() => onAdd(count)}>Agregar al carrito</button>
+      <button className="addCartButton" onClick={validate}>Agregar al carrito</button>
     </div>
   )
 }

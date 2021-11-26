@@ -6,7 +6,7 @@ import ItemCount from '../itemCount/ItemCount';
 
 const msg = (valor) => {
     console.log(`Se agrega el producto seleccionado la cantidad de: ${valor}`)
-  };
+};
 
 const ItemListContainer = ({text}) => (
     <Container>
@@ -18,7 +18,7 @@ const ItemListContainer = ({text}) => (
                 </div>
             </Col>
         </Row>
-        <ItemCount getInitial={1} getStock={15} onAdd={(count)=> msg(count)} />
+        <ItemCount getInitial={1} getStock={10} onAdd={(count)=> msg(count)} />
     </Container>
 )
 export default ItemListContainer
