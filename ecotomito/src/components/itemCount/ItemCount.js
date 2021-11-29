@@ -3,9 +3,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMinus, faPlus } from '@fortawesome/free-solid-svg-icons';
 import './itemCount.css';
 
-const ItemCount = ({getInitial, getStock, onAdd}) => {
+const ItemCount = ({getInitial, stock, onAdd}) => {
   const [count, setCount] = useState(getInitial);
-  const [stock] = useState(getStock);
   const validate = () => {
     if (stock>0) {
       onAdd(count)

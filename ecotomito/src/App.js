@@ -11,10 +11,8 @@ function App() {
 
   return (
     <div className="App">
-       <NavBar></NavBar>
-      
-        <ItemListContainer text="¡Bienvenidos a Ecotomito!" />
-      
+      <NavBar />
+      <ItemListContainer />
     </div>
   );
 }
