@@ -1,6 +1,22 @@
-.cardItem{
-    box-shadow: 5px 5px 5px grey;
-}
 .cardContainer{
     padding: 10px;
+}
+.cardItem{
+    box-shadow: 5px 5px 5px grey;
+    padding: 10px;
+    background-color: yellow;
+}
+.cardItem img{
+    width: 15rem;
+}
+.cardContent{
+    list-style: none;
+}
+.cardContent li{
+    padding: 10px
+}
+.cardTitle{
+    font-weight: bold;
+    font-size: 1.2rem;
+    text-transform: uppercase;
 }

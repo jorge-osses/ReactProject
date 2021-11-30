@@ -1,20 +1,21 @@
 import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
 import './Item.css'
+import { useCallback } from 'react'
 
 const Item = ({ product }) => {
     return (
             <div className='cardContainer'>
-                <Card className='cardItem' style={{ width: '18rem' }}>
-                    <Card.Img variant="top" src={product.pictureUrl} />
-                    <Card.Body>
-                        <Card.Title>{product.title}</Card.Title>
-                        <Card.Text>Categoría: {product.category}</Card.Text>
-                        <Card.Text>Precio: U$D {product.price}</Card.Text>
-                        <Card.Text>Stock: {product.stock}</Card.Text>
-                        <Button variant="primary">Ver detalles</Button>
-                    </Card.Body>
-                </Card>
+                <div className='cardItem' style={{ width: '18rem' }}>
+                    <img src={product.thumbnail} />
+                    <ul className='cardContent'>
+                        <li className='cardTitle'>{product.title}</li>
+                        {/* <li><b>Categoría:</b> {product.category}</li> */}
+                        <li><b>Precio:</b> $ {product.price}</li>
+                        {/* <li><b>Stock:</b> {product.stock}</li> */}
+                        <li><button className="cardButton">Ver detalles</button></li>
+                    </ul>
+                </div>
             </div>
     )
 }
