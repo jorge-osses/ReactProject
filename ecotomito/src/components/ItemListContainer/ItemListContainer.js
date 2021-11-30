@@ -1,13 +1,14 @@
 import Container from 'react-bootstrap/Container';
 import ItemList from '../ItemList/ItemList';
-import ItemCount from '../itemCount/ItemCount';
+// import ItemCount from '../itemCount/ItemCount';
 import { useEffect, useState } from "react";
+import './ItemListContainer.css'
 
 
 
-const msg = (valor) => {
-    console.log(`Se agrega el producto seleccionado la cantidad de: ${valor}`)
-};
+// const msg = (valor) => {
+//     console.log(`Se agrega el producto seleccionado la cantidad de: ${valor}`)
+// };
 var elements = [
     {
         id: 1,
@@ -80,9 +81,9 @@ const ItemListContainer = () => {
     return (
 
 
-    <Container>
+    <Container className='itemListContainer'>
         <ItemList product={products}/>
-        <ItemCount getInitial={1} stock={20} onAdd={(count)=> msg(count)} />
+        {/* <ItemCount getInitial={1} stock={20} onAdd={(count)=> msg(count)} /> */}
     </Container>
 )}
 export default ItemListContainer

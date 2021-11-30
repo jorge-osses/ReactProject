@@ -1,5 +1,12 @@
 .cardItem{
     box-shadow: 5px 5px 5px grey;
+    height: 100%;
+    border-radius:5px;
+    transition: .3s;
+}
+.cardItem:hover{
+    box-shadow: 0 0 5px grey;
+    height: 100%;
 }
 .cardContainer{
     padding: 10px;
