@@ -4,6 +4,7 @@ var elements = [
         title: 'PopIn',
         price: 10,
         pictureUrl: 'https://m.media-amazon.com/images/I/71lxZaWBKSL._AC_SL1000_.jpg',
+        description: 'Tamaño ajustable gracias a los corchetes de la parte delantera hacen que sea unitalla. Se adapta al crecimiento del bebé desde 3.18 kg - 16 kg. Cintura elástica suave y fácil cierre de aplica para que los cambios sean rápidos, en un paso. Refuerzo doble antiescapes para proteger las fugas del bebé de cualquier tamaño o edad. Absorbente removible y refuerzo para una absorción variable y un secado más rápido. Fácil de cuidar sin remojar, simplemente lave con un lavado de 60 grados.',
         category: 'pañales de tela',
         stock: 30
     },
