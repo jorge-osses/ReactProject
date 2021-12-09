@@ -4,7 +4,7 @@ import NavDropdown from 'react-bootstrap/NavDropdown'
 import Container from 'react-bootstrap/Container'
 import LogoProduct from '../../assets/img/logo.ico'
 import CartWidget from '../CartWidget/CartWidget'
-import {Link} from 'react-router-dom'
+import {Link, NavLink} from 'react-router-dom'
 
 const NaviBar = () => {
     
@@ -24,11 +24,11 @@ const NaviBar = () => {
                 <Nav className="me-auto">
                     <Nav.Link><Link style={{ textDecoration: 'none', color: 'inherit' }} to={'/'}>Productos</Link></Nav.Link>
                     <NavDropdown title="Categorías" id="basic-nav-dropdown">
-                        <NavDropdown.Item><Link style={{ textDecoration: 'none', color: 'inherit' }} to={`/category/pañales de tela`}>Pañales</Link></NavDropdown.Item>
-                        <NavDropdown.Item><Link style={{ textDecoration: 'none', color: 'inherit' }} to={`/category/absorbentes`}>Absorbentes</Link></NavDropdown.Item>
-                        <NavDropdown.Item><Link style={{ textDecoration: 'none', color: 'inherit' }} to={`/category/covertores`}>Covertores</Link></NavDropdown.Item>
+                        <NavDropdown.Item><NavLink style={{ textDecoration: 'none', color: 'inherit' }} to={`/category/pañales de tela`}>Pañales</NavLink></NavDropdown.Item>
+                        <NavDropdown.Item><NavLink style={{ textDecoration: 'none', color: 'inherit' }} to={`/category/absorbentes`}>Absorbentes</NavLink></NavDropdown.Item>
+                        <NavDropdown.Item><NavLink style={{ textDecoration: 'none', color: 'inherit' }} to={`/category/covertores`}>Covertores</NavLink></NavDropdown.Item>
                         <NavDropdown.Divider />
-                        <NavDropdown.Item><Link style={{ textDecoration: 'none', color: 'inherit' }} to={`/category/higiene femenina`}>Higiene femenino</Link></NavDropdown.Item>
+                        <NavDropdown.Item><NavLink style={{ textDecoration: 'none', color: 'inherit' }} to={`/category/higiene femenina`}>Higiene femenino</NavLink></NavDropdown.Item>
                     </NavDropdown>
                 </Nav>
                 </Navbar.Collapse>
