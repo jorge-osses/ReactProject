@@ -4,35 +4,36 @@ import NavDropdown from 'react-bootstrap/NavDropdown'
 import Container from 'react-bootstrap/Container'
 import LogoProduct from '../../assets/img/logo.ico'
 import CartWidget from '../CartWidget/CartWidget'
+import {Link} from 'react-router-dom'
 
 const NaviBar = () => {
+    
     return (
         <Navbar bg="danger" expand="lg">
             <Container>
-                <Navbar.Brand href="/#"><img
+                <Navbar.Brand><Link style={{ textDecoration: 'none', color: 'inherit' }} to={'/'}><img
                     alt="ecotomito"
                     src={LogoProduct}
                     width="30"
                     height="30"
                     className="d-inline-block align-top"
-                    />{' '}Ecotomito
+                    />{' '}Ecotomito</Link>
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="me-auto">
-                    <Nav.Link href="/#">Inicio</Nav.Link>
-                    <Nav.Link href="/#">Nosotros</Nav.Link>
-                    <NavDropdown title="Productos" id="basic-nav-dropdown">
-                    <NavDropdown.Item href="/#">Pañales</NavDropdown.Item>
-                    <NavDropdown.Item href="/#">Absorbentes</NavDropdown.Item>
-                    <NavDropdown.Item href="/#">Covertores</NavDropdown.Item>
-                    <NavDropdown.Divider />
-                    <NavDropdown.Item href="/#">Higiene femenino</NavDropdown.Item>
+                    <Nav.Link><Link style={{ textDecoration: 'none', color: 'inherit' }} to={'/'}>Productos</Link></Nav.Link>
+                    <NavDropdown title="Categorías" id="basic-nav-dropdown">
+                        <NavDropdown.Item><Link style={{ textDecoration: 'none', color: 'inherit' }} to={`/category/pañales de tela`}>Pañales</Link></NavDropdown.Item>
+                        <NavDropdown.Item><Link style={{ textDecoration: 'none', color: 'inherit' }} to={`/category/absorbentes`}>Absorbentes</Link></NavDropdown.Item>
+                        <NavDropdown.Item><Link style={{ textDecoration: 'none', color: 'inherit' }} to={`/category/covertores`}>Covertores</Link></NavDropdown.Item>
+                        <NavDropdown.Divider />
+                        <NavDropdown.Item><Link style={{ textDecoration: 'none', color: 'inherit' }} to={`/category/higiene femenina`}>Higiene femenino</Link></NavDropdown.Item>
                     </NavDropdown>
                 </Nav>
                 </Navbar.Collapse>
 
-            <CartWidget number={1} />
+            <CartWidget number={0} />
             </Container>
         </Navbar>
     )

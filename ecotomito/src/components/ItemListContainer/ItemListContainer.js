@@ -1,33 +1,33 @@
 import Container from 'react-bootstrap/Container';
 import ItemList from '../ItemList/ItemList';
-import ItemCount from '../itemCount/ItemCount';
 import { useEffect, useState } from "react";
-import {getProducts} from '../../products'
+import {getProducts, getProductByCategory} from '../../products'
 import './ItemListContainer.css'
+import { useParams } from 'react-router-dom';
 
 
-
-const msg = (valor) => {
-    console.log(`Se agrega el producto seleccionado la cantidad de: ${valor}`)
-};
 
 
 const ItemListContainer = () => {
     const [products, setProducts] = useState([])
-
+    const {categoryId} = useParams()
 
     useEffect(() => {
-        const list = getProducts()
-
-        list.then((itemslist) => {
-            setProducts(itemslist)
-        })
-    })
+        ( async () => {
+            
+            if (categoryId !== undefined){
+                const list = await getProductByCategory(categoryId)
+                setProducts(list)
+            } else {
+                const list = await getProducts()
+                setProducts(list)
+            }
+        }) ()
+    },[categoryId])
     return (
 
 
     <Container className='itemListContainer'>
-        <ItemCount getInitial={1} stock={20} onAdd={(count)=> msg(count)} />
         <ItemList product={products}/>
     </Container>
 )}
