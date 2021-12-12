@@ -7,13 +7,18 @@ ___
 
 ## Mis Espectativas
 
-Por el momento, independientemente de la Página estática de Ecotomito, éste ecommerce quedará funcionando de manera autónoma, redireccionando desde la página estática.
+Principalmente aprender a usar React Js. Por el momento, independientemente de la Página estática de [Ecotomito](https://ecotomito.com.ar), éste ecommerce quedará funcionando de manera autónomo, redireccionando desde la página estática.
 
 ___
 
-## Adentrando al proyecto
+# Proyecto
 
-Estoy usando "*react-bootstrap*" en su mayoria para darle estilo.
+## Instalación y dependencias
+
+El proyecto esta inicializado con `npx install create-react-app ecotomito`.
+
++ Estoy usando "*react-bootstrap*" en su mayoria para darle estilo. Para instalar las dependencias para utilizar **react-bootstrap**, en la consola, `npm install react-bootstrap bootstrap@5.1.3` o si prefieres también puedes usar `yarn`. Puedes acceder a la documentacion de [React-bootstrap](https://react-bootstrap.github.io/)
++ Para el *Routing* usé, `npm i react-router-dom` para crear los *path*, también usé `yarn add react-router-bootstrap` para poder usarlo con los ***Link*** de Boostrap.
 
 ### App.js
 
@@ -29,7 +34,7 @@ ___
 
 ### NaviBar.js
 
-La barra de navegacion hecha con ***react-bootstrap***, esta conformado por:
+La barra de navegacion hecha con ***react-bootstrap***, y el rounting con ***react-router-bootstrap***. Está conformado por:
 
 #### una Brand
 Con el logo y nombre de la marca, que al clickearlo direcciona al inicio, donde muestra la lista general de los productos
@@ -41,3 +46,8 @@ Con el nombre de **Productos**, y muestra una lista de las categorias. Al Accion
 + Absorbentes
 + Covertores
 + Higiene femenino
+
+#### <CartWidget>
+Es un componente, el cual muestra un botón con un carrito y el número de productos agregado al carrito
+
+___
