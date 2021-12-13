@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import {getProductById} from '../../products';
 import ItemDetail from '../ItemDetail/ItemDetail';
 import { useParams } from "react-router-dom";
+import Spin from '../Spin/Spin'
 
 const ItemDetailContainer = () => {
     const [product, setProduct] = useState([])
@@ -23,7 +24,7 @@ const ItemDetailContainer = () => {
 
     return (
         <div>
-            <ItemDetail item={product} />
+            {product.length === 0 ? <Spin /> : <ItemDetail item={product} /> } 
         </div>
     )
 }

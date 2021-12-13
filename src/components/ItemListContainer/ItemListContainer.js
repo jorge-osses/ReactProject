@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import {getProducts, getProductByCategory} from '../../products'
 import './ItemListContainer.css'
 import { useParams } from 'react-router-dom';
+import Spin from '../Spin/Spin'
 
 
 
@@ -28,7 +29,7 @@ const ItemListContainer = () => {
 
 
     <Container fluid className='itemListContainer'>
-        <ItemList product={products}/>
+        {products.length === 0 ? <Spin /> : <ItemList product={products}/>}
     </Container>
 )}
 export default ItemListContainer

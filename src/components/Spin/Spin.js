@@ -1,8 +1,8 @@
 import React from "react";
 import Spinner from "react-bootstrap/Spinner";
-import './Cart.css'
+import './Spin.css'
 
-const Cart = () => (
+const Spin = () => (
     <div className="divParent">
         <div className="divChild">
             <Spinner animation="grow" size="lg" variant="danger" />
@@ -12,4 +12,4 @@ const Cart = () => (
         </div>
     </div>
 )
-export default Cart;
+export default Spin;
