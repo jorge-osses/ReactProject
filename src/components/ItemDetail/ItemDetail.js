@@ -23,11 +23,11 @@ const ItemDetail = ({item}) => {
                 </Card.Body>
                 <Card.Body className='p-4 d-flex flex-column align-items-between' style={{ width: '50%', borderLeft: '1px solid grey' }}>
                     <Card.Title className='p-6 mb-4'>{item?.title}</Card.Title>
-                    <Card.Text>Color:Multicolor</Card.Text>
+                    <Card.Text>Color: {item?.color}</Card.Text>
                     <Card.Text>Acerca de este producto: {item?.description}</Card.Text>
-                    <Card.Text>Precio: U$D {item?.price}</Card.Text>
-                    <Card.Text>Stock: {item?.stock}</Card.Text>
-                    {count === 0 ? <ItemCount getInitial={1} stock={item?.stock} onAdd={addToCart} /> : <LinkContainer to={'/cart'}><Button variant='danger'>Finalizar Compra</Button></LinkContainer>}
+                    <Card.Text className='pt-5'><b>Precio: U$D {item?.price}</b></Card.Text>
+                    {count === 0 ? <ItemCount getInitial={1} stock={item?.stock} onAdd={addToCart} /> : <LinkContainer to={'/cart'} style={{width: '300px', margin: '20px auto'}}><Button variant='danger'>Finalizar Compra</Button></LinkContainer>}
+                    <Card.Footer>{item?.stock} productos disponibles</Card.Footer>
                 </Card.Body>
             </Card>
         </Container>

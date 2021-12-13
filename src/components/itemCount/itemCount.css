@@ -1,26 +1,19 @@
 .itemCount{
     width: 300px;
-    margin:10% auto;
+    margin:20px auto;
 }
 
 .countContainer{
-    width: 80%;
-    display: flex;
-    justify-content: space-between;
-    border: 1px solid grey;
+    width: 100%;
+    border: 1px solid grey!important;
     border-radius: 5px;
     margin: 5px auto;
     box-shadow: 2px  grey;
-    background-color: white;
 }
-.countContainer button{
-    background-color: white;
-    border: none;
-}
-.countContainer button:hover {
+
+.countContainer span:hover {
     color:red;
 }
 .addCartButton{
-    width: 80%;
-    margin-top:5%
+    width: 100%;
 }

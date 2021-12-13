@@ -75,4 +75,12 @@ En este archivo es donde se almacena la lista de productos mediante un *Array* d
 ___
 ### ItemListContainer
 
-Este contenedor se encarga de mostrar a un componente hijo `<ItemList>`, cual almacena los productos.
+Este contenedor se encarga de mostrar a un componente hijo `<ItemList>`, cual almacena una lista de los productos desglozando el mínimo necesario de las propiedades de cada producto. Mediante el uso de `Hook`, se muestran los productos según categoria seleccionada o muestra todos los productos.
+
+### ItemDetailContainer
+
+En este componente almacena como hijo al componente **ItemDetail** donde despliega el detalle de un producto. Éste se muestra cuando seleccionamos un producto. Con la ayuda de un `Hook`, toma el ID del producto selecionado y vuelca con una `props` toda la informacion necesaria para ampliar el producto.
+
+#### ItemDetail
+
+Es el contenedor donde despliega la informacion del producto detallada, y se le agrega como hijo el componente `ItemCount`, que éste tiene una función que incrementa y otra que decrementa la cantidad de productos a agregar al carrito, luego un boton que te agrega la cantidad y cambia a un boton de finalizar compra routeando a `(/cart)`. El contador se va aumentar hasta la cantidad que tenga como stock el producto. Todos los parametros se llaman mediante props.

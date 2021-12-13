@@ -27,11 +27,11 @@ const ItemCount = ({getInitial, stock, onAdd}) => {
   
   return (
     <div className="itemCount">
-      <div className="countContainer">
-        <button  onClick={decrement}><FontAwesomeIcon icon={faMinus} /></button>
+      <Button variant='ligth' className="countContainer d-flex flex-row justify-content-between">
+        <span  onClick={decrement}><FontAwesomeIcon icon={faMinus} /></span>
         <div>{count}</div>
-        <button onClick={increment}><FontAwesomeIcon icon={faPlus} /></button>
-      </div>
+        <span onClick={increment}><FontAwesomeIcon icon={faPlus} /></span>
+      </Button>
       <Button variant='danger' className="addCartButton" onClick={validate}>Agregar al carrito</Button>
     </div>
   )

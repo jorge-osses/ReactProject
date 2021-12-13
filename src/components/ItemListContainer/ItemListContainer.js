@@ -27,7 +27,7 @@ const ItemListContainer = () => {
     return (
 
 
-    <Container className='itemListContainer'>
+    <Container fluid className='itemListContainer'>
         <ItemList product={products}/>
     </Container>
 )}

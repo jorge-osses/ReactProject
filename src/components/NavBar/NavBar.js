@@ -10,7 +10,7 @@ const NavBar = () => {
     
     return (
         <Navbar bg="danger" expand="md">
-            <Container fluid>
+            <Container>
                 <LinkContainer to={'/'}>
                     <Navbar.Brand>
                         <img
