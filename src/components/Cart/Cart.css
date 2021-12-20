@@ -3,6 +3,11 @@
     flex-direction:column;
     width:100%;
 }
-.divCartProduct{
-    height: 20px;
+.divCartProducts{
+    height: 10rem;
+    text-align: right;
+    padding-top: 2rem;
+    padding-right: 5rem;
+    background-color:white;
+    font-size:22pt
 }

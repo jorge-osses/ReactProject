@@ -22,6 +22,7 @@ export const CartContextProvider = ({children}) => {
     const totalSum = (array) => {
         let count = 0;
         array.forEach(item => count += item.price*item.quantity)
+        count = (count * 1.21).toFixed(2)
         return count
     }
     const addItemById = (itemId, count, stock) => {
@@ -43,13 +44,15 @@ export const CartContextProvider = ({children}) => {
         Item.forEach(prod => {
             count += prod.quantity;
         });
-        console.log(count)
+        // console.log(count)
         return count;
     }
     countItems()
 
-    const removeItem = (itemId) => {
-        setItem(Item.filter(item => item.id === itemId))
+    const removeItem = (Id) => {
+        let products = Item.filter(prod => prod.id !== Id)
+        clear()
+        setItem(products)
     }
     const clear = () => {
         setItem([])
@@ -59,7 +62,7 @@ export const CartContextProvider = ({children}) => {
         console.log(result)
         return result
     }
-    console.log(Item)
+    // console.log(Item)
 
 
     
