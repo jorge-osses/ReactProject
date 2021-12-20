@@ -1,0 +1,8 @@
+.Error{
+    color: red;
+    background-color: rgba(169, 169, 169, 0.507);
+}
+.Success{
+    color: green;
+    background-color: rgba(169, 169, 169, 0.507);
+}

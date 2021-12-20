@@ -1,12 +1,17 @@
 import Navbar from 'react-bootstrap/Navbar'
 import Nav from 'react-bootstrap/Nav'
 import NavDropdown from 'react-bootstrap/NavDropdown'
+import Button from 'react-bootstrap/Button'
 import Container from 'react-bootstrap/Container'
 import LogoProduct from '../../assets/img/logo.ico'
 import CartWidget from '../CartWidget/CartWidget'
 import { LinkContainer } from 'react-router-bootstrap'
+import CartContext from '../../context/CartContext'
+import { useContext } from 'react'
 
 const NavBar = () => {
+    const { countItems } = useContext(CartContext)
+    let count = countItems()
     
     return (
         <Navbar bg="danger" expand="md">
@@ -45,8 +50,9 @@ const NavBar = () => {
                     </NavDropdown>
                 </Nav>
                 </Navbar.Collapse>
-
-            <CartWidget number={0} />
+                <LinkContainer to={'/cart'}>
+                    {count === 0 ? <div></div> : <Button variant='danger'><CartWidget number={count} /></Button>}
+                </LinkContainer>
             </Container>
         </Navbar>
     )

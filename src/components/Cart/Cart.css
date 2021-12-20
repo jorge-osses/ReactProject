@@ -1,0 +1,8 @@
+.CartProducts{
+    display:flex;
+    flex-direction:column;
+    width:100%;
+}
+.divCartProduct{
+    height: 20px;
+}
