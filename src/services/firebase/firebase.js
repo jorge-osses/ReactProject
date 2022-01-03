@@ -3,7 +3,6 @@ import { getFirestore } from "firebase/firestore";
 import { initializeApp } from "firebase/app";
 
 
-
 const firebaseConfig = {
   apiKey: "AIzaSyALcY4bwP9ZK5WfbDdyPAWrOBF9VFHM0OE",
   authDomain: "eccomerce-ecotomito.firebaseapp.com",

@@ -1,7 +1,6 @@
 import Container from 'react-bootstrap/Container';
 import ItemList from '../ItemList/ItemList';
 import { useEffect, useState } from "react";
-import {getProducts, getProductByCategory} from '../../products'
 import './ItemListContainer.css'
 import { useParams } from 'react-router-dom';
 import Spin from '../Spin/Spin'

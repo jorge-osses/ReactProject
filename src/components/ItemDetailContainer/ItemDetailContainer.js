@@ -1,6 +1,5 @@
 import React from 'react';
 import { useEffect, useState } from "react";
-import {getProductById} from '../../products';
 import ItemDetail from '../ItemDetail/ItemDetail';
 import { useParams } from "react-router-dom";
 import Spin from '../Spin/Spin'
