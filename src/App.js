@@ -9,25 +9,32 @@ import { CartContextProvider } from './context/CartContext'
 import Notification from './components/Notification/Notification';
 import { NotificationContextProvider } from './context/NotificationContext'
 import Cart from "./components/Cart/Cart"
+import ContactForm from './components/ContactForm/ContactForm';
+import DashBoardContainer from './components/DashBoard/DashBoardContainer';
+import { UserContext } from './context/UserContext';
 
 
 function App() {
   return (
     <div className="App itemListContainer" >
-      <NotificationContextProvider>
-        <CartContextProvider>
-          <BrowserRouter>
-            <NavBar />
-            <Notification />
-            <Routes>
-              <Route exact path="/" element={<ItemListContainer/>} />            
-              <Route exact path="/Cart" element={<Cart />} />            
-              <Route exact path="/category/:categoryId" element={<ItemListContainer/>} />            
-              <Route exact path="/detail/:paramId" element={<ItemDetailContainer />} />
-            </Routes>
-          </BrowserRouter>
-        </CartContextProvider>
-      </NotificationContextProvider>
+      <UserContext>
+        <NotificationContextProvider>
+          <CartContextProvider>
+            <BrowserRouter>
+              <NavBar />
+              <Notification />
+              <Routes>
+                <Route exact path="/" element={<ItemListContainer/>} />            
+                <Route exact path="/Cart" element={<Cart />} />
+                <Route exact path="/Checkout" element={<ContactForm />} />
+                <Route exact path="/Dashboard" element={<DashBoardContainer />} />
+                <Route exact path="/category/:categoryId" element={<ItemListContainer/>} />            
+                <Route exact path="/detail/:paramId" element={<ItemDetailContainer />} />
+              </Routes>
+            </BrowserRouter>
+          </CartContextProvider>
+        </NotificationContextProvider>
+      </ UserContext>
     </div>
   );
 }

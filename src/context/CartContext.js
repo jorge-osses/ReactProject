@@ -22,7 +22,7 @@ export const CartContextProvider = ({children}) => {
     const totalSum = (array) => {
         let count = 0;
         array.forEach(item => count += item.price*item.quantity)
-        count = (count * 1.21).toFixed(2)
+        count.toFixed(2)
         return count
     }
     const addItemById = (itemId, count, stock) => {
@@ -44,7 +44,6 @@ export const CartContextProvider = ({children}) => {
         Item.forEach(prod => {
             count += prod.quantity;
         });
-        // console.log(count)
         return count;
     }
     countItems()
@@ -59,13 +58,8 @@ export const CartContextProvider = ({children}) => {
     }
     const isInCart = (id) => {
         const result = Item.some(item => item.id === id)
-        console.log(result)
         return result
     }
-    // console.log(Item)
-
-
-    
  
     return(
         <CartContext.Provider value={{Item, addItem, removeItem, clear, isInCart, addItemById, countItems, totalSum}}>

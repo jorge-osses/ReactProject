@@ -1,18 +1,16 @@
-// import * as firebase from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 import { initializeApp } from "firebase/app";
 
 
 const firebaseConfig = {
-  apiKey: "AIzaSyALcY4bwP9ZK5WfbDdyPAWrOBF9VFHM0OE",
-  authDomain: "eccomerce-ecotomito.firebaseapp.com",
-  projectId: "eccomerce-ecotomito",
-  storageBucket: "eccomerce-ecotomito.appspot.com",
-  messagingSenderId: "749624273606",
-  appId: "1:749624273606:web:f649b989660237c29685c7"
+  apiKey: process.env.REACT_APP_apiKey,
+  authDomain: process.env.REACT_APP_authDomian,
+  projectId: process.env.REACT_APP_projectId,
+  storageBucket: process.env.REACT_APP_storageBucket,
+  messagingSenderId: process.env.REACT_APP_messagingSenderId,
+  appId: process.env.REACT_APP_appId
 };
 
-// Initialize Firebase
 const app = initializeApp(firebaseConfig);
 
 export const db = getFirestore(app);

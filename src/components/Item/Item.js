@@ -9,14 +9,13 @@ const Item = ({ product }) => {
     return (
             <div className='cardContainer'>
                 <Card className='cardItem' style={{ width: '18rem' }}>
-                    <Card.Img variant="top" src={product.pictureUrl} />
-                    <Card.Body>
+                    <Card.Img variant="top" src={product.pictureUrl} style={{ height: '50%' }} />
+                    <Card.Body className="d-flex flex-column justify-content-between" style={{ height: '50%' }}>
                         <Card.Title>{product.title}</Card.Title>
-                        <Card.Text>Categoría: {product.category}</Card.Text>
-                        <Card.Text><small>Precio: U$D</small> {product.price}</Card.Text>
-                        <Card.Text>Stock: {product.stock}</Card.Text>
+                        <Card.Text>{product.category}</Card.Text>
+                        <Card.Text><small>U$D</small> {product.price}</Card.Text>
                         <LinkContainer to={`/detail/${product.id}`}>
-                        <Button variant="danger">Ver detalles</Button>
+                            <Button variant="danger">Ver detalles</Button>
                         </LinkContainer>
                     </Card.Body>
                 </Card>
