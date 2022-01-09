@@ -9,15 +9,6 @@ import {LinkContainer} from 'react-router-bootstrap';
 const Cart = () =>{
     const { Item, totalSum, clear } = useContext(CartContext)
 
-    // const validated = () =>{
-    //     if(Item.length > 0){
-    //         return true;
-    //     } else {
-    //         return false;
-    //     }
-    // }
-
-
     return (
         <Container className='CartProducts' >
             {Item.map(product => <ItemCart key={product.id} product={product} />)}
