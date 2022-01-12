@@ -40,7 +40,7 @@ ___
  ### `.env`
  Se agrega un archivo .env con los datos de Firebase para encriptar las credenciales de administración de Firebase
 
- ## .env de ejemplo: `.env.example`
+ ## .env de ejemplo: `.env.example` *Estos datos son de ejemplo, si estas con interes a mi proyecto y necesitas las credenciales me puedes contactar*
 
 -   REACT_APP_apiKey=asadsvarfberasr
 -   REACT_APP_authDomain=wsdvasdvasdvsdv.firebaseapp.com
@@ -49,7 +49,7 @@ ___
 -   REACT_APP_messagingSenderId=123546789
 -   REACT_APP_appId=1:123456789:web:edvasd5646sdv65sdv
 
-Luego en `firebase.js` se llaman a las variables de la siguiente forma
+Luego en `firebase.js` se llaman a las variables de entorno de la siguiente forma
 
 -   apiKey: process.env.REACT_APP_apiKey,
 -   authDomain: process.env.REACT_APP_authDomian,
@@ -57,7 +57,22 @@ Luego en `firebase.js` se llaman a las variables de la siguiente forma
 -   storageBucket: process.env.REACT_APP_storageBucket,
 -   messagingSenderId: process.env.REACT_APP_messagingSenderId,
 -   appId: process.env.REACT_APP_appId
- ___
+
+### En el archivo `firebase.js` se inicializa firebase en la App
+Se inicializa la *DataBase* e inicializan las credenciales de *Firebase*
+
+___
+
+Para crear un *Object* del producto deberá componerse de la siguiente manera:
++ `title:` nombre del producto
++ `id:` ID del producto creado por Firebase
++ `price:` precio del producto
++ `quantity:` Cantidad tomada desde el *ItemCount*
++ `color:` color del producto
++ `pictureUrl:` URL pública donde se toma la imagen
++ `stock:` cantidad disponible en la base de datos cagado
++ `description:` descripcion del producto para el *ItemDetail*
+___
 
 ### App.js
 
@@ -102,9 +117,6 @@ Con el nombre de **Categorías**, y muestra una lista de las categorias. Al Acci
 Es un componente, el cual muestra un botón con un carrito y el número de productos agregado al carrito. El icono del carrito proviene de ***FontAwesome***
 
 ___
-
-
-___
 ### ItemListContainer
 
 Este contenedor se encarga de mostrar a un componente hijo `<ItemList>`, cual almacena una lista de los productos desglozando el mínimo necesario de las propiedades de cada producto. Mediante el uso de `Hook`, se muestran los productos según categoria seleccionada o muestra todos los productos.
@@ -116,3 +128,19 @@ En este componente almacena como hijo al componente **ItemDetail** donde desplie
 #### ItemDetail
 
 Es el contenedor donde despliega la informacion del producto detallada, y se le agrega como hijo el componente `ItemCount`, que éste tiene una función que incrementa y otra que decrementa la cantidad de productos a agregar al carrito, luego un boton que te agrega la cantidad y cambia a un boton de finalizar compra routeando a `(/cart)`. El contador se va aumentar hasta la cantidad que tenga como stock el producto. Todos los parametros se llaman mediante props.
+
+#### ItemCount
+
+Este componente almacena las funciones para agregar y substraer mostrando la el numero de la cantidad de productos a agregar al carrito
+
+#### Cart
+
+Este es el componente donde se van a listar los productos agregados desde el ItemDetail, se pueden eliminar productos individuales y el carrito entero. en el Botón *Comprar*, nos lleva a un Formulario de contacto.
+
+#### ContactForm
+
+Este Formulario con todos los campos obligatorios se encarga de cargar los datos del comprador y habilita el botón de *Confirmar compra*. Redireccionando al DashBoard
+
+#### DashBoardContainer `Dashboard`
+
+Al finalizar la compra, en este componente mostrara un listado de los productos comprados y cada compra que realizó el usuario con el mismo EMAIL.
