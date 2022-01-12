@@ -15,13 +15,6 @@ const ItemDetailContainer = () => {
         getProductById('items', paramId)
             .then((res) => {
                 setProduct(res)
-                if(res.stock > 0){
-                } else {
-                    return(<h1>El producto no tiene stock</h1>) 
-                }
-                if (res.pictureUrl){
-                } else {
-                    return(<h1>No existe</h1>)}
             })
             .catch((error) => {
                 console.log('Error searching item', error)

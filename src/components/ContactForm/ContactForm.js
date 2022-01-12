@@ -125,7 +125,7 @@ const ContactForm = () => {
           Confirmar compra
         </Button>
         </Form>
-      ) : <h1>Redireccionando al Dashboard...</h1>}  
+      ) : <h1 className="tx-center">Redireccionando al Dashboard...</h1>}  
     </Container>
   )
 }

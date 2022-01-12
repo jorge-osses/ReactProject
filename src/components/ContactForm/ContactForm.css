@@ -1,4 +1,8 @@
 .error{
     color: red;
-    /* font-size: 70%; */
+}
+.tx-center {
+    text-align: center;
+    margin:50vh auto;
+    background-color: inherit;
 }
