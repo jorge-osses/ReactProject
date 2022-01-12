@@ -25,6 +25,40 @@ El proyecto esta inicializado con `npx install create-react-app ecotomito`.
   yarn add @fortawesome/free-solid-svg-icons
   yarn add @fortawesome/react-fontawesome`
 
+___
+
+## Lenguajes de programacion utilizados
+ - HTML
+ - CSS
+ - JAVASCRIPT
+ - REACT JS
+
+ Base de datos usado:
+
+ - Firebase
+
+ ### `.env`
+ Se agrega un archivo .env con los datos de Firebase para encriptar las credenciales de administración de Firebase
+
+ ## .env de ejemplo: `.env.example`
+
+-   REACT_APP_apiKey=asadsvarfberasr
+-   REACT_APP_authDomain=wsdvasdvasdvsdv.firebaseapp.com
+-   REACT_APP_projectId=sdvasdvasdvasdv
+-   REACT_APP_storageBucket=sadvasdvasdvasdv.appspot.com
+-   REACT_APP_messagingSenderId=123546789
+-   REACT_APP_appId=1:123456789:web:edvasd5646sdv65sdv
+
+Luego en `firebase.js` se llaman a las variables de la siguiente forma
+
+-   apiKey: process.env.REACT_APP_apiKey,
+-   authDomain: process.env.REACT_APP_authDomian,
+-   projectId: process.env.REACT_APP_projectId,
+-   storageBucket: process.env.REACT_APP_storageBucket,
+-   messagingSenderId: process.env.REACT_APP_messagingSenderId,
+-   appId: process.env.REACT_APP_appId
+ ___
+
 ### App.js
 
 El archivo principal es App.js, de aqui se routea todo el proyecto,
@@ -32,13 +66,19 @@ El archivo principal es App.js, de aqui se routea todo el proyecto,
 #### + NavBar
 #### + ItemListContainer
 #### + ItemDetailContainer
+#### + Cart
+#### + ContactForm
+#### + DashBoardContainer
 
 + **‘/’** navega a `<ItemListContainer />`
 + **‘/category/:categoryId’** toma el ID de la categoria y filtra los productos donde se muestran en  `<ItemListContainer />`
 + **‘/detail/:paramId’** navega a `<ItemDetailContainer />`
++ **'/Cart'** se dirige al Carrito con los productos agregados
++ **'/Checkout'** es el segundo paso después de aceptar y seguir con la compra, donde te muestra un formulario donde ingresar los datos del comprador `<ContactForm />`
++ **'/Dashboard'** es un tablero donde se muestra todas las compras realizadas segun el email del comprador, en `<DashBoardContainer />` se mostraran todas las compras registradas en firebase
 
 
-__
+___
 
 ### NavBar.js
 
@@ -63,14 +103,6 @@ Es un componente, el cual muestra un botón con un carrito y el número de produ
 
 ___
 
-### product.js
-En este archivo es donde se almacena la lista de productos mediante un *Array* de objetos con sus propiedades. Un *Array* de objetos, donde se almacena las categorias de los productos y una serie de funciones que retornan una **Promise** para simular el retardo de la red del llamado de una `API` real.
-
-+ `getCategories`, devuelve el array donde estan almacenadas las categorias
-+ `getProductById`, devuelve la categoria de producto segun el ID dado por parámetro
-+ `getProducts`, es la función que se usa para listar todos los productos en **ItemList**
-+ `getProductById`, retorna un producto según el ID ingresado por parámetro
-+ `getItem`, devuelve un producto específico del Array, según su índice
 
 ___
 ### ItemListContainer

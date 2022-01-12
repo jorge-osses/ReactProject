@@ -3,8 +3,7 @@ import { useEffect, useState } from "react";
 import ItemDetail from '../ItemDetail/ItemDetail';
 import { useParams } from "react-router-dom";
 import Spin from '../Spin/Spin'
-import { db } from '../../services/firebase/firebase';
-import { getDoc, doc } from "firebase/firestore"
+import { getProductById } from '../../services/firebase/productServices';
 
 const ItemDetailContainer = () => {
     const [product, setProduct] = useState([])
@@ -13,15 +12,23 @@ const ItemDetailContainer = () => {
 
     useEffect(() => {
         setLoading(true)
-        getDoc(doc(db, 'items', paramId)).then((querySnapshot) => {
-            const product = { id: querySnapshot.id, ...querySnapshot.data() }
-            setProduct(product)
-        }).catch((error) => {
-            console.log('Error searching item', error)
-        }).finally(() => {
-            setLoading(false)
-        })
-        
+        getProductById('items', paramId)
+            .then((res) => {
+                setProduct(res)
+                if(res.stock > 0){
+                } else {
+                    return(<h1>El producto no tiene stock</h1>) 
+                }
+                if (res.pictureUrl){
+                } else {
+                    return(<h1>No existe</h1>)}
+            })
+            .catch((error) => {
+                console.log('Error searching item', error)
+            }).finally(() => {
+                setLoading(false)
+            })
+
         return (() => {
             setProduct()
         })
